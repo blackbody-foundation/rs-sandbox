@@ -2,12 +2,6 @@ use std::{error, io, net, str};
 
 use console;
 use crossbeam;
-// thread 1 : receiving BB,
-//      A: if BB is mine, connecting Group (TCP)
-//      B: else,
-//          if BB needs last signing: signing BB, returning BB to creator (UDP)
-//          else, signing BB, spreading BB (UDP)
-// phase start : creating BB, spreading BB
 
 fn main() -> Result<(), Box<dyn error::Error>> {
     let client_addr = "127.0.0.1:5451";
